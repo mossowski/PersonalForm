@@ -10,6 +10,10 @@ public class Person {
 	private String[] languages;
 	private String additionalInfo;
 	
+	public enum languagesEnum { C, Java, PHP, JavaScript, Python, Perl, Ruby}
+	public enum townsEnum { Gdańsk, Gdynia, Sopot, Kartuzy }
+	public enum genderEnum { Male, Female }
+	
 	public Person() {
 		super();
 	}

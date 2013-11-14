@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import ="com.example.servletjspdemo.domain.Person.languagesEnum"%>
+<%@ page import ="com.example.servletjspdemo.domain.Person.townsEnum"%>
+<%@ page import ="com.example.servletjspdemo.domain.Person.genderEnum"%>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,25 +20,29 @@
   First name : <input type="text" name="firstName" value="${person.firstName}"/><br/>
   Last name : <input type="text" name="lastName" value="${person.lastName}"/><br/>
   Year of birth : <input type="text"  name="yob" value="${person.yob}"/><br/>
-  Gender : <input type="radio" name="gender" value="Male" />Male
-           <input type="radio" name="gender" value="Female"/>Female<br/>
+  Gender : 
+<%  
+  for(genderEnum e: genderEnum.values())
+    out.println("<input type='radio' name='gender' value=" + e.toString() + " />" + e.toString());
+  out.println("</br>");
+%>
   Town : <select name="towns" size="4" multiple="multiple">
     <option value="Gdańsk">Gdańsk</option>
     <option value="Gdynia">Gdynia</option>
     <option value="Sopot">Sopot</option>
     <option value="Kartuzy">Kartuzy</option>
+<%  
+  for(townsEnum e: townsEnum.values())
+    out.println("<option value=" + e.toString() + ">" + e.toString() + "</option><br/>");
+%>
   </select><br/>
 </fieldset>
 <fieldset>
 <legend>Favorite Languages</legend>
-        <input type="checkbox" name="languages" value="Java"/>Java
-        <input type="checkbox" name="languages" value="C++"/>C++
-        <input type="checkbox" name="languages" value="C#"/>C#
-        <input type="checkbox" name="languages" value="PHP"/>PHP
-        <input type="checkbox" name="languages" value="JavaScript"/>JavaScript
-        <input type="checkbox" name="languages" value="Python"/>Python
-        <input type="checkbox" name="languages" value="Perl"/>Perl
-        <input type="checkbox" name="languages" value="Ruby"/>Ruby
+<%  
+  for(languagesEnum e: languagesEnum.values())
+    out.println("<input type='checkbox' name='languages' value=" + e.toString() + ">" + e.toString() + "<br/>");
+%>
 </fieldset>
 <fieldset>
   <legend>Additional information</legend>
