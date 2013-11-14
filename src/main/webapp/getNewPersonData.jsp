@@ -27,15 +27,11 @@
   out.println("</br>");
 %>
   Town : <select name="towns" size="4" multiple="multiple">
-    <option value="Gdańsk">Gdańsk</option>
-    <option value="Gdynia">Gdynia</option>
-    <option value="Sopot">Sopot</option>
-    <option value="Kartuzy">Kartuzy</option>
 <%  
   for(townsEnum e: townsEnum.values())
     out.println("<option value=" + e.toString() + ">" + e.toString() + "</option><br/>");
 %>
-  </select><br/>
+</select><br/>
 </fieldset>
 <fieldset>
 <legend>Favorite Languages</legend>

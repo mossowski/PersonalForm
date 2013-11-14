@@ -96,16 +96,12 @@ public final class getNewPersonData_jsp extends org.apache.jasper.runtime.HttpJs
 
       out.write("\n");
       out.write("  Town : <select name=\"towns\" size=\"4\" multiple=\"multiple\">\n");
-      out.write("    <option value=\"Gdańsk\">Gdańsk</option>\n");
-      out.write("    <option value=\"Gdynia\">Gdynia</option>\n");
-      out.write("    <option value=\"Sopot\">Sopot</option>\n");
-      out.write("    <option value=\"Kartuzy\">Kartuzy</option>\n");
   
   for(townsEnum e: townsEnum.values())
     out.println("<option value=" + e.toString() + ">" + e.toString() + "</option><br/>");
 
       out.write("\n");
-      out.write("  </select><br/>\n");
+      out.write("</select><br/>\n");
       out.write("</fieldset>\n");
       out.write("<fieldset>\n");
       out.write("<legend>Favorite Languages</legend>\n");
